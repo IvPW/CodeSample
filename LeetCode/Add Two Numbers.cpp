@@ -16,7 +16,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
  */
 class Solution {
 	//walk over the lists to add them
-	//Time: N(O), Space: N(O)
+	//Time: O(N), Space: O(N)
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         int sum = 0;
