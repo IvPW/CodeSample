@@ -42,18 +42,17 @@ string GetRomanCharacter(int digit, char one, char five, char ten)
   return result;
 }
 
-string GetRomanCharacter(int digit, int tens)
+string GetRomanCharactersForDigit(int digit, int tens)
 {
   if(digit == 0)
   {
     return "";
   }
-
+  // every digits can be presented by 3 characters based on their position
   string result = "";
   switch(tens)
   {
     case 1:
-      // for the first digit, we use the first 3 characters
       return GetRomanCharacter(digit, 'I', 'V', 'X');
     case 2:
       return GetRomanCharacter(digit, 'X', 'L', 'C');
@@ -79,7 +78,7 @@ string GetRomanCharacter(int digit, int tens)
         {
             digit = num / pow(10,i);
             num -= digit * pow(10,i);
-            result.append(GetRomanCharacter(digit, i+1));
+            result.append(GetRomanCharactersForDigit(digit, i+1));
         }
 
         return result;
