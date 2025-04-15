@@ -1,0 +1,1 @@
+This is where I put my coding practice for coding interview. They might not be the best solution but they should be something that is done within 20 mins.
