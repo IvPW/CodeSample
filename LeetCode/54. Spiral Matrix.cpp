@@ -96,7 +96,6 @@ public:
         for(int i = 0; i < totalElement; ++i)
         {
             result[i] = matrix[coordX][coordY];
-            cout << result[i] <<endl;
             matrix[coordX][coordY] = invalidNumber;//mark this element as visited
             updateMovingParemeters(matrix, coordX, coordY,dir);
         }
