@@ -7,38 +7,26 @@ Assume the environment does not allow you to store 64-bit integers (signed or un
 class Solution {
 	//Time: O(log(N)), Space:O(1)
 public:
-    string convert(string s, int numRows) 
-    {
-		//based on the number of rows, create the row as string by putting the characters in one bu one
-		//append each string at the end
-        if(numRows <= 1)
+    int reverse(int x) {
+
+
+        int result = 0;
+
+        while(x != 0)
         {
-            return s;
-        }
-
-        string result = "";
-
-        vector<string> rows(numRows, "");
-
-        int currentRow = 0;
-        int direction = 1;
-        for(int i = 0; i < s.size(); ++i)
-        {
-            rows[currentRow] += s[i];
-            currentRow += direction;
-
-            if((currentRow == numRows-1) || (currentRow == 0))
+            // if the result will overflow, return 0
+            if(result > INT_MAX / 10 || result < INT_MIN / 10)
             {
-                direction *= -1;
-            }
+                return 0;
+            } 
+
+            result *= 10;
+            result += x % 10;
+
+            x = x / 10;
         }
 
-        for(int i = 0; i < numRows; ++i)
-        {
-            //append the rows by making each row into a string
-            result+=rows[i];
-        }
-
-        return result;
+        return result ;
+        
     }
 };
